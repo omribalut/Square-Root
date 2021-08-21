@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="a">Value of 'a':</label>
+            <input type="text" id="a" name="a"/>
+
+    
+    <label for="b">Value of 'b':</label>
+    <input type="text" id="b" name="b">
+
+    
+    <label for="c">Value of 'c':</label>
+    
+    <input type="text" id="c" name="c" />
+
+    <button onclick="calculate()">חשב</button>
+    <div>Result:</div>
+
+    <label for="x1">x1:</label>
+    <input type="text" id="x1" name="x1" />
+
+    <label for="x2">x2:</label>
+    <input type="text" id="x2" name="x2" />
+
+    <script>
+    
+        var aElement = document.getElementById ('a')
+        var bElement = document.getElementById ('b')
+        var cElement = document.getElementById ('c')
+        var x1Element = document.getElementById('x1');
+        var x2Element = document.getElementById('x2');
+
+        function calculate() {
+            var aNum = parseInt(aElement.value) 
+            var bNum = parseInt(bElement.value)
+            var cNum = parseInt(cElement.value)
+
+            var squareRoot = Math.sqrt((bNum*bNum)-(4*aNum*cNum))
+
+            var numeratorPlus = (-1*bNum) + squareRoot
+            var numeratorMinus = (-1*bNum) - squareRoot
+
+            var divider = (2*aNum)
+
+            var x1solution = numeratorPlus / divider
+            var x2solution = numeratorMinus / divider
+
+            x1Element.value = x1solution
+            x2Element.value = x2solution
+        }
+        
+
+       </script>
+</body>
+</html>
+
